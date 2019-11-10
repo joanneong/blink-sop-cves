@@ -54,6 +54,7 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
 </div>
 <button onclick="style.display='none'; steal()">Try to read a cross-origin style</button>
 <br>
+<br>
 
 <div>
 <i class="fa">&#128077; Good: You do not see any alerts.</i>
