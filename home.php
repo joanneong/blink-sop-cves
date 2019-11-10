@@ -52,17 +52,16 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
 <div>
 <p>Check whether your browser allows for css content to be readable even if it is cross-origin!<p>
 </div>
-<div class="crossOrigin" style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">I am trying to steal some cross-origin styles! Wahaha</div>
-<br>
+<button onclick="style.display='none'; steal()">Try to read a cross-origin style</button>
 
 <div>
-<i class="fa">&#128077; Good: The text is black.</i>
+<i class="fa">&#128077; Good: You do not see any alerts.</i>
 <br>
-<i class="fa">&#128078; Bad: The text is red.</i>
+<i class="fa">&#128078; Bad: You see an alert containing cross-origin css!</i>
 </div>
 <br>
 
-<link rel="stylesheet" href="/catchme">
+<link rel="stylesheet" href="/catchme" onload="steal()">
 <script>
   navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://another-origin.firebaseapp.com/cross-origin.css')
   .then(reg => {
@@ -72,4 +71,8 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
       // registration failed
       console.log('Registration failed with ' + error);
   });
+
+  function steal() {
+    alert(document.styleSheets[0].cssRules[0].cssText);
+  }
 </script>
