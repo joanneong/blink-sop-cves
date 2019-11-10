@@ -62,7 +62,7 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
 </div>
 <br>
 
-<link rel="stylesheet" href="/catchme" onload="steal()">
+<link rel="stylesheet" type="text/css" href="/catchme">
 <script>
   navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://another-origin.firebaseapp.com/cross-origin.css')
   .then(reg => {
@@ -72,8 +72,4 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
       // registration failed
       console.log('Registration failed with ' + error);
   });
-
-  function steal() {
-    alert(document.styleSheets[0].cssRules[0].cssText);
-  }
 </script>
