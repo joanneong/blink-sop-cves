@@ -56,7 +56,7 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
 <br>
 
 <div>
-<i class="fa">&#128077; Good: The text does not change color.</i>
+<i class="fa">&#128077; Good: The text is black.</i>
 <br>
 <i class="fa">&#128078; Bad: The text is red.</i>
 </div>
