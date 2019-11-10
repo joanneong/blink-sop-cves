@@ -18,6 +18,6 @@ let handleRequest = (request, response) => {
     });
 };
  
-http.createServer(handleRequest).listen(PORT => {
+http.createServer(handleRequest).listen(PORT, () => {
     console.log(`Server running on ${PORT}/`);
 });
