@@ -1,0 +1,1 @@
+< ?php header($_GET['url']); ?>
