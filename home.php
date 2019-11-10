@@ -3,7 +3,7 @@
   <source id="source" src="/location.php?url=https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
 </audio><br>
 <button onclick="document.getElementById('leftAudio').src='https://www.w3schools.com/tags/horse.mp3'">Change source to https://www.w3schools.com/tags/horse.mp3</button>
-<button onclick="document.getElementById('leftAudio').src='./location.php?url=https://www.w3schools.com/tags/horse.mp3'">Change source to /location.php?url=https://www.w3schools.com/tags/horse.mp3</button>
+<button onclick="document.getElementById('leftAudio').src='/location.php?url=https://www.w3schools.com/tags/horse.mp3'">Change source to /location.php?url=https://www.w3schools.com/tags/horse.mp3</button>
 <script>
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 var myAudio = document.getElementById("leftAudio");
