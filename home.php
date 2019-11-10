@@ -24,7 +24,7 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
 </script>
 
 <script>
-  navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://blink-sop-cves.herokuapp.com/cross-origin.css')
+  navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://another-origin.firebaseapp.com/cross-origin.css')
   .then(reg => {
       // registration worked
       console.log('Registration succeeded. Scope is ' + reg.scope);
