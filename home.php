@@ -53,6 +53,7 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
 <p>Check whether your browser allows for css content to be readable even if it is cross-origin!<p>
 </div>
 <button onclick="style.display='none'; steal()">Try to read a cross-origin style</button>
+<br>
 
 <div>
 <i class="fa">&#128077; Good: You do not see any alerts.</i>
